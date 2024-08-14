@@ -1,20 +1,16 @@
-import * as THREE from 'three';
+import * as THREE from "./node_modules/three/build/three.module.js";
 import './main.css';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import * as CANNON from 'cannon-es';
 import * as functions from './functions';
 import gsap from 'gsap';
-import { ConvolutionShader, OutputShader, RGBELoader, SelectionHelper } from 'three/examples/jsm/Addons.js';
+import { RGBELoader } from 'three/examples/jsm/Addons.js';
 import { RenderPass } from 'three/examples/jsm/Addons.js';
 import { OutlinePass } from 'three/addons/postprocessing/OutlinePass.js';
-import { FXAAShader } from 'three/addons/shaders/FXAAShader.js';
-import { UnrealBloomPass } from 'three/examples/jsm/Addons.js';
 import { EffectComposer } from 'three/examples/jsm/Addons.js';
 import { OutputPass } from 'three/examples/jsm/Addons.js';
-import { ShaderPass } from 'three/examples/jsm/Addons.js';
 import { TransformControls } from 'three/addons/controls/TransformControls.js';
 import GUI from 'lil-gui'; 
-import { contain } from 'three/src/extras/TextureUtils.js';
 // _______________________________________________________________ //
 
 const sizes = {

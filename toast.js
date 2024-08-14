@@ -4,7 +4,7 @@ const buttons = document.querySelectorAll(".glass-btn");
 let done = false;
 
 const toastDetails = {
-  timer: 1000000,
+  timer: 10000,
   "enter-shop": {
     text: "<div>Right</div> click to select a bottle. <br><br> Right click again to send scroll back.",
   },
