@@ -1,6 +1,8 @@
 import * as THREE from "./node_modules/three/build/three.module.js";
 import './main.css';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+
+
 import * as CANNON from 'cannon-es';
 import * as functions from './functions';
 import gsap from 'gsap';
