@@ -1,5 +1,5 @@
 import * as THREE from "./node_modules/three/build/three.module.js";
-import { OrbitControls } from './node_modules/@types/three/examples/jsm/controls/OrbitControls.js';
+import { OrbitControls } from './node_modules/three/examples/jsm/controls/OrbitControls.js';
 import * as CANNON from './node_modules/cannon-es/dist/cannon-es.js';
 import gsap from './node_modules/gsap/gsap-core.js';
 import { RGBELoader, RenderPass, EffectComposer, OutputPass } from './node_modules/three/examples/jsm/Addons.js';
