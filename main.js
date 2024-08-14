@@ -1,18 +1,13 @@
 import * as THREE from "./node_modules/three/build/three.module.js";
-import './main.css';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-
-
-import * as CANNON from 'cannon-es';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import * as CANNON from './node_modules/cannon-es/dist/cannon-es.js';
+import gsap from './node_modules/gsap/gsap-core.js';
+import { RGBELoader, RenderPass, EffectComposer, OutputPass } from './node_modules/three/examples/jsm/Addons.js';
+import { OutlinePass } from './node_modules/three/examples/jsm/postprocessing/OutlinePass.js';
+import { TransformControls } from "./node_modules/three/examples/jsm/controls/TransformControls.js";
+import { GUI } from './node_modules/lil-gui/dist/lil-gui.esm.js';
 import * as functions from './functions';
-import gsap from 'gsap';
-import { RGBELoader } from 'three/examples/jsm/Addons.js';
-import { RenderPass } from 'three/examples/jsm/Addons.js';
-import { OutlinePass } from 'three/addons/postprocessing/OutlinePass.js';
-import { EffectComposer } from 'three/examples/jsm/Addons.js';
-import { OutputPass } from 'three/examples/jsm/Addons.js';
-import { TransformControls } from 'three/addons/controls/TransformControls.js';
-import GUI from 'lil-gui'; 
+import './main.css';
 // _______________________________________________________________ //
 
 const sizes = {

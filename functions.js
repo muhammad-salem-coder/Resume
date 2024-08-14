@@ -1,9 +1,11 @@
-import * as THREE from 'three';
-import * as CANNON from 'cannon-es';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import gsap from 'gsap';
-import GUI from 'lil-gui'; 
-import anime from 'animejs/lib/anime.es.js';
+import * as THREE from "./node_modules/three/build/three.module.js";
+import * as CANNON from './node_modules/cannon-es/dist/cannon-es.js';
+import { GLTFLoader } from './node_modules/three/examples/jsm/loaders/GLTFLoader.js';
+import gsap from './node_modules/gsap/gsap-core.js';
+import { CSSPlugin } from 'gsap/CSSPlugin'; // Import CSSPlugin
+import anime from './node_modules/animejs/lib/anime.es.js';
+
+gsap.registerPlugin(CSSPlugin); // Register the CSSPlugin
 
 const loaderManager = new THREE.LoadingManager();
 
