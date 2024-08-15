@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import { OrbitControls } from 'https://unpkg.com/three@0.152.2/examples/jsm/controls/OrbitControls.js';
 import * as CANNON from 'https://unpkg.com/cannon-es@0.18.2/dist/cannon-es.js';
-import gsap from 'gsap/gsap-core.js';
+import { gsap } from 'https://unpkg.com/gsap@3.11.0/dist/gsap.min.js';
 import { RGBELoader, RenderPass, EffectComposer, OutputPass } from 'three/examples/jsm/Addons.js';
 import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass.js';
 import { TransformControls } from "three/examples/jsm/controls/TransformControls.js";
