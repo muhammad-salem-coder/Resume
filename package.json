@@ -1,13 +1,19 @@
 {
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d dist"
+  },
   "dependencies": {
     "@tweenjs/tween.js": "^23.1.2",
     "animejs": "^3.2.2",
     "cannon-es": "^0.20.0",
+    "gh-pages": "^6.1.1",
     "gsap": "^3.12.5",
     "lil-gui": "^0.19.2",
     "three": "^0.166.0"
   },
   "devDependencies": {
+    "buffer": "^6.0.3",
     "vite": "^5.3.2"
   }
 }
