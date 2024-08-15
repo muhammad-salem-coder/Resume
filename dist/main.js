@@ -343,10 +343,7 @@ let emit_scrolls = [3, 5, 0, 10, 9, 15, 16, 17]
 let tex_path = [];
 // loading containers and scrolls
 for (let i=0; i <= 16; i++){
-    if (i !== emit_scrolls[i]){
-        tex_path.push(`scroll_tex${i}`)
-
-    }
+    tex_path.push(`scroll_tex${i}`)
 }
 
 let texs = {};
