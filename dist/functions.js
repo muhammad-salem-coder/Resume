@@ -207,13 +207,10 @@ export function load_model_animation(path, setpath, scene, color, pos, scale, ca
     });
 }
 
-const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-const dropboxUrl = "https://www.dropbox.com/scl/fi/q9iikumu5teu58h0zmp62/store1.glb?rlkey=bfxplotigar9tz5z4gt4s8c32&st=xffweeba&dl=1";
-
 export function load_model_animation_base(path, setpath, scene, color, pos, scale, callback) {
     const loader = new GLTFLoader(loaderManager);
 
-    loader.load(proxyUrl + dropboxUrl, function (gltf) {
+    loader.load('https://dl.dropboxusercontent.com/scl/fi/q9iikumu5teu58h0zmp62/store1.glb?rlkey=bfxplotigar9tz5z4gt4s8c32&st=xffweeba&dl=1', function (gltf) {
         const model = gltf.scene;
 
         model.rotation.z += Math.PI / 2; 
