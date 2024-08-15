@@ -4139,22 +4139,22 @@ const gltfJson = {
 		{
 			"mimeType":"image/png",
 			"name":"decore_tex2",
-			"uri":"decore_tex2.png"
+			"uri":"./assets/models/tex_backup/store/decore_tex2.png"
 		},
 		{
 			"mimeType":"image/png",
 			"name":"board",
-			"uri":"board.png"
+			"uri":"./assets/models/tex_backup/store/board.png"
 		},
 		{
 			"mimeType":"image/png",
 			"name":"sushi_tex2",
-			"uri":"sushi_tex2.png"
+			"uri":"./assets/models/tex_backup/store/sushi_tex2.png"
 		},
 		{
 			"mimeType":"image/png",
 			"name":"storte_tex2",
-			"uri":"storte_tex2.png"
+			"uri":"./assets/models/tex_backup/store/storte_tex2.png"
 		}
 	],
 	"accessors":[
@@ -8875,7 +8875,7 @@ const gltfJson = {
 	"buffers":[
 		{
 			"byteLength":100079140,
-			"uri":"store-shutter-animation-nonbaked2.bin"
+			"uri":"./assets/models/store-shutter-animation-nonbaked2.bin"
 		}
 	]
 };
