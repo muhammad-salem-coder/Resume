@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import * as CANNON from 'cannon-es';
+import * as CANNON from 'https://unpkg.com/cannon-es@0.18.2/dist/cannon-es.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import gsap from 'gsap/gsap-core.js';
 import { CSSPlugin } from 'gsap/CSSPlugin'; // Import CSSPlugin
