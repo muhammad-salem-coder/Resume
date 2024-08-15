@@ -1,12 +1,12 @@
-import * as THREE from "three";
-import { OrbitControls } from 'https://unpkg.com/three@0.152.2/examples/jsm/controls/OrbitControls.js';
-import * as CANNON from 'https://unpkg.com/cannon-es@0.18.2/dist/cannon-es.js';
-import { gsap } from 'https://unpkg.com/gsap@3.11.0/dist/gsap.min.js';
-import { RGBELoader, RenderPass, EffectComposer, OutputPass } from 'https://cdn.jsdelivr.net/npm/three@0.152.2/examples/jsm/Addons.js';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.module.js';
+import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.152.2/examples/jsm/controls/OrbitControls.js';
+import * as CANNON from 'https://cdn.jsdelivr.net/npm/cannon-es@0.18.2/dist/cannon-es.js';
+import { gsap } from 'https://cdn.jsdelivr.net/npm/gsap@3.11.0/dist/gsap.min.js';
+import { RGBELoader, RenderPass, EffectComposer, OutputPass } from 'https://cdn.jsdelivr.net/npm/three@0.152.2/examples/jsm/postprocessing/EffectComposer.js';
 import { OutlinePass } from 'https://cdn.jsdelivr.net/npm/three@0.152.2/examples/jsm/postprocessing/OutlinePass.js';
 import { TransformControls } from 'https://cdn.jsdelivr.net/npm/three@0.152.2/examples/jsm/controls/TransformControls.js';
 import { GUI } from 'https://cdn.jsdelivr.net/npm/lil-gui@0.17.2/dist/lil-gui.esm.js';
-import * as functions from './functions';
+import * as functions from './functions.js';
 import './main.css';
 // _______________________________________________________________ //
 
