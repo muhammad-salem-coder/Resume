@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import * as CANNON from 'https://unpkg.com/cannon-es@0.20.0/dist/cannon-es.js';
 import { GLTFLoader } from 'https://unpkg.com/three@0.167.1/examples/jsm/loaders/GLTFLoader.js';
 import gsap from 'https://unpkg.com/gsap/gsap-core.js';
-import anime from 'https://unpkg.com/animejs@2.2.0/anime.js';
+import {anime} from 'https://unpkg.com/animejs@2.2.0/anime.js';
 import { CSSPlugin } from 'https://unpkg.com/gsap@3.12.5/CSSPlugin.js'; // Import CSSPlugin
 
 gsap.registerPlugin(CSSPlugin); // Register the CSSPlugin
