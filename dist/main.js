@@ -1,4 +1,4 @@
-import * as THREE from 'https://unpkg.com/three@0.167.1/build/three.module.js';
+import * as THREE from 'three';
 import * as CANNON from 'https://unpkg.com/cannon-es@0.20.0/dist/cannon-es.js';
 import { OrbitControls } from 'https://unpkg.com/three/examples/jsm/controls/OrbitControls.js';
 import { OutlinePass } from 'https://unpkg.com/three/examples/jsm/postprocessing/OutlinePass.js';
