@@ -1,0 +1,419 @@
+head, body{
+    position: absolute;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+/* .loading-screen{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(244, 244, 244, 255);
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#progress-bar{
+    width: 30%;
+    margin-top: 0.5%;
+    height: 2%;
+}
+
+label {
+    color: aliceblue;
+    font-size: 2rem;
+
+} */
+
+.pre-loader,
+.loader,
+.loader-bg,
+.loader-content {
+    pointer-events: none;
+}
+
+
+.pre-loader{
+    background-color: rgba(0, 0, 255, 0);
+    position: fixed;
+    top:0;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0%, 0%, 100%, 0%, 100%, 100%, 0%, 100%);
+}
+
+.loader {
+    position: absolute;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    color: aliceblue;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    width: 400px;
+    z-index: 2;
+    color: aliceblue;
+}
+
+.count{
+    flex: 2;
+    text-align: right;
+    line-height: 1;
+    padding: 0 1em;
+}
+
+.copy{
+    flex: 6;
+    font-family: 'Poppins';
+    font-size: 40px;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.ml16{
+    overflow: hidden;
+}
+
+.ml16 .letter {
+    display: inline-block;
+    line-height: 1em;
+}
+
+.loader-bg{
+    position: absolute;
+    display: block;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(199, 149, 1, 0.804);
+    z-index: -1;
+}
+
+.loader-2{
+    position: absolute;
+    top:0;
+    width: 100%;
+    height: 100%;
+}
+
+.glass-btn {
+    display: inline-block;
+    padding: 4% 10%;
+    border: 0;
+    text-decoration: none;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.077);
+    /* border: 1px solid rgba(255,255,255,0.1); */
+    backdrop-filter: blur(30px);
+    color: rgba(255, 255, 255, 0.732);
+    font-size: 110%;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transform: translateY(100px);
+}
+
+.glass-btn.disappear {
+    animation: fade-disappear 0.5s forwards;
+}
+
+.glass-btn.appear {
+    animation: fade-appear 0.5s forwards;
+}
+
+.glass-btn:hover{
+    background-color: rgba(255, 255, 255, 0.267);
+}
+
+#enter-btn{
+    pointer-events: auto;
+    z-index: 1; 
+    font-family: 'Poppins';
+    font-weight: 600;
+    color: aliceblue;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    bottom: 30%;
+    justify-content: center;
+}
+
+.contorls-sec{
+    opacity: 0.6;
+    position: absolute;
+    font-family: 'Poppins';
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    bottom: 10%;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.contorls-sec.hide{
+    animation: hide-controls 2s forwards;
+}
+
+#spacebar {
+    font-weight: 1000;
+    padding: 4% 20%;
+    border: 0;
+    text-decoration: none;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.304);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(30px);
+    color: rgba(53, 53, 53, 0.548);
+    font-size: 150%;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    animation-name: spacebar-anim;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.instr{
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 130%;
+    color: aliceblue;
+}
+
+@keyframes spacebar-anim {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: rgba(0, 0, 0, 0) 0 0 0px 0px;
+    }
+    20% {
+        transform: scale(0.92);
+
+    }
+    40%, 50% {
+        box-shadow: rgba(255, 255, 255, 0.8) 0 0 30px 5px;
+        opacity: 0.7;
+    }
+    40%, 60% {
+        transform: scale(0.92);
+    }
+    80% {
+        box-shadow: rgba(0, 0, 0, 0) 0 0 0px 0px;
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes hide-controls {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes fade-disappear {
+    from {
+        display: block;
+        opacity: 1;
+    }
+    to {
+        display: none;
+        opacity: 0;
+    }
+  }
+
+  
+@keyframes fade-appear {
+    0% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+  }
+
+  .notifications {
+    position: fixed;
+    top: 30px;
+    right: 20px;
+  }
+  .notifications :where(.toast, .column) {
+    display: flex;
+    align-items: center;
+  }
+  .notifications .toast {
+    font-family: "Poppins";
+    width: 200px;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    border-radius: 4px;
+    padding: 16px 17px;
+    margin-bottom: 10px;
+    background: var(--light);
+    justify-content: space-between;
+    animation: show_toast 0.3s ease forwards;
+  }
+  @keyframes show_toast {
+    0% {
+      transform: translateX(100%);
+    }
+    40% {
+      transform: translateX(-5%);
+    }
+    80% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-10px);
+    }
+  }
+  .notifications .toast.hide {
+    animation: hide_toast 0.3s ease forwards;
+  }
+  @keyframes hide_toast {
+    0% {
+      transform: translateX(-10px);
+    }
+    40% {
+      transform: translateX(0%);
+    }
+    80% {
+      transform: translateX(-5%);
+    }
+    100% {
+      transform: translateX(calc(100% + 20px));
+    }
+  }
+  .toast::before {
+    position: absolute;
+    content: "";
+    height: 3px;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+    animation: progress 5s linear forwards;
+  }
+  @keyframes progress {
+    100% {
+      width: 0%;
+    }
+  }
+  .toast.success::before,
+  .btn#success {
+    background: var(--success);
+  }
+  .toast.error::before,
+  .btn#error {
+    background: var(--error);
+  }
+  .toast.warning::before,
+  .btn#warning {
+    background: var(--warning);
+  }
+  .toast.info::before,
+  .btn#info {
+    background: var(--info);
+  }
+  .toast.random::before,
+  .btn#random {
+    background: var(--random);
+  }
+ 
+  .column{
+    background-color: rgba(255, 255, 255, 0.437);
+    backdrop-filter: blur(20px);
+    padding: 5%;
+    padding-right: 6%;
+    border-radius: 10px;
+  }
+  .toast .column i {
+    font-size: 1.75rem;
+  }
+  .toast.success .column i {
+    color: var(--success);
+  }
+  .toast.error .column i {
+    color: var(--error);
+  }
+  .toast.warning .column i {
+    color: var(--warning);
+  }
+  .toast.info .column i {
+    color: var(--info);
+  }
+  .toast.random .column i {
+    color: var(--random);
+  }
+  .toast .column span {
+    font-size: 1.07rem;
+    margin-left: 12px;
+  }
+  .toast i:last-child {
+    color: #aeb0d7;
+    cursor: pointer;
+  }
+  .toast i:last-child:hover {
+    color: var(--dark);
+  }
+
+  .buttons {
+    position: relative; /* or absolute/fixed depending on your layout */
+    z-index: 100000;
+}
+  .buttons .btn {
+    
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin: 0 5px;
+    color: var(--light);
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 4px;
+  }
+  
+  @media screen and (max-width: 530px) {
+    .notifications {
+      width: 95%;
+    }
+    .notifications .toast {
+      width: 100%;
+      font-size: 1rem;
+      margin-left: 20px;
+    }
+    .buttons .btn {
+      margin: 0 1px;
+      font-size: 1.1rem;
+      padding: 8px 15px;
+    }
+  }
+
+/* nav{
+    padding: 4%;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a{
+    color: aliceblue;
+    font-family: 'Poppins';
+} */
+
+
