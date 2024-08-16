@@ -2,7 +2,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.m
 import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three-orbitcontrols@2.110.3/OrbitControls.min.js';
 import * as CANNON from 'https://cdn.jsdelivr.net/npm/cannon-es@0.20.0/+esm';
 import { gsap } from 'https://cdn.jsdelivr.net/npm/gsap@3.11.0/dist/gsap.min.js';
-import { RGBELoader, RenderPass, EffectComposer, OutputPass } from 'https://cdn.jsdelivr.net/npm/three@0.152.2/examples/jsm/postprocessing/EffectComposer.js';
+import { RGBELoader, RenderPass, EffectComposer, OutputPass } from 'https://cdn.jsdelivr.net/npm/three-addons@1.2.0/build/three-addons.min.js';
 import { OutlinePass } from 'https://cdn.jsdelivr.net/npm/three@0.152.2/examples/jsm/postprocessing/OutlinePass.js';
 import { TransformControls } from 'https://cdn.jsdelivr.net/npm/three@0.152.2/examples/jsm/controls/TransformControls.js';
 import { GUI } from 'https://cdn.jsdelivr.net/npm/lil-gui@0.19.2/dist/lil-gui.umd.min.js';
