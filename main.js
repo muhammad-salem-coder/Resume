@@ -1,5 +1,7 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.module.js';
 import * as CANNON from 'https://cdn.jsdelivr.net/npm/cannon-es@0.20.0/+esm';
+import { OrbitControls } from 'https://unpkg.com/three/examples/jsm/controls/OrbitControls.js';
+import { OutlinePass } from 'https://unpkg.com/three/examples/jsm/postprocessing/OutlinePass.js';
 import * as functions from './functions.js';
 // _______________________________________________________________ //
 
