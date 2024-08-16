@@ -7,7 +7,7 @@ import { TransformControls } from "https://unpkg.com/three/examples/jsm/controls
 import gsap from 'https://unpkg.com/gsap/gsap-core.js';
 import { GUI } from 'https://unpkg.com/lil-gui/dist/lil-gui.esm.js';
 import * as functions from './functions.js';
-import './main.css';
+
 // _______________________________________________________________ //
 
 const sizes = {
