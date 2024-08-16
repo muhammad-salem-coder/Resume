@@ -1,7 +1,7 @@
-import * as THREE from "three";
-import * as CANNON from 'https://unpkg.com/cannon-es@0.18.2/dist/cannon-es.js';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { gsap } from 'https://unpkg.com/gsap@3.11.0/dist/gsap.min.js';
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.module.js';
+import * as CANNON from 'https://cdn.jsdelivr.net/npm/cannon-es@0.20.0/+esm';
+import { GLTFLoader } from 'https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js';
+import { gsap } from 'https://cdn.jsdelivr.net/npm/gsap@3.11.0/dist/gsap.min.js';
 import { CSSPlugin } from 'gsap/CSSPlugin';
 import anime from 'animejs/lib/anime.es.js';
 
