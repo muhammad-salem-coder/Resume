@@ -207,7 +207,7 @@ export function load_model_animation(path, setpath, scene, color, pos, scale, ca
     });
 }
 
-modelJSON = {
+const modelJSON = {
 	"asset":{
 		"generator":"Khronos glTF Blender I/O v4.1.63",
 		"version":"2.0"
