@@ -210,13 +210,14 @@ export function load_model_animation(path, setpath, scene, color, pos, scale, ca
 export function load_model_animation_base(path, setpath, scene, color, pos, scale, callback) {
     const loader = new GLTFLoader(loaderManager).setPath(setpath);
 
-    loader.parse(JSON.stringify(path), '', function (gltf) {
+    loader.load(path, function (gltf) {
         const model = gltf.scene;
 
         model.rotation.z += Math.PI / 2; 
         model.scale.set(scale.x, scale.y, scale.z);
         model.position.set(pos.x, pos.y, pos.z);
         scene.add(model);
+		console.log(model)
 
         let mixer = new THREE.AnimationMixer(model);
         const clips = gltf.animations;
