@@ -313,7 +313,7 @@ for (let i = 0; i < 4; i++) {
     let shopmodel;
     let store_action;
     let store_mixer;
-    functions.load_model_animation_base('store-shutter-animation-nonbaked2.gltf', './assets/models/', scene, 0xfff0ff, {x:(0.5*i)+(10*i), y:0.5, z:0.5}, {x:2, y:2, z:2}, function(loadModel){
+    functions.load_model_animation_base(`store-shutter-animation-nonbaked2-${i+1}.gltf`, './assets/models/', scene, 0xfff0ff, {x:(0.5*i)+(10*i), y:0.5, z:0.5}, {x:2, y:2, z:2}, function(loadModel){
         let { model: load_shop_model, mixer: loadedMixer, action: load_action } = loadModel;
         shopmodel = load_shop_model;
         store_mixer = loadedMixer;
@@ -588,7 +588,7 @@ function check_collision() {
     collisionDetected = false;
     in_area = false;
 
-    for (let i = 0; i < shop_models.length; i++){
+    for (let i = 0; i < (shop_models.length-1); i++){
         let max_car_dist = car_debug.position.x + (car_debug.geometry.parameters.width)
         let min_car_dist = car_debug.position.x - (car_debug.geometry.parameters.depth * 2)
         let mid_car_dist = ((max_car_dist - min_car_dist)/2) + min_car_dist;
