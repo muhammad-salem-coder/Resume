@@ -3179,22 +3179,22 @@ const modelJSON = {
 		{
 			"mimeType":"image/png",
 			"name":"decore_tex2",
-			"uri":"./tex_backup/store/decore_tex2.png"
+			"uri":".assets/models/tex_backup/store/decore_tex2.png"
 		},
 		{
 			"mimeType":"image/png",
 			"name":"board",
-			"uri":"./tex_backup/store/board.png"
+			"uri":".assets/models/tex_backup/store/board.png"
 		},
 		{
 			"mimeType":"image/png",
 			"name":"sushi_tex2",
-			"uri":"./tex_backup/store/sushi_tex2.png"
+			"uri":".assets/models/tex_backup/store/sushi_tex2.png"
 		},
 		{
 			"mimeType":"image/png",
 			"name":"storte_tex2",
-			"uri":"./tex_backup/store/storte_tex2.png"
+			"uri":".assets/models/tex_backup/store/storte_tex2.png"
 		}
 	],
 	"accessors":[
@@ -6694,7 +6694,7 @@ const modelJSON = {
 	"buffers":[
 		{
 			"byteLength":96988332,
-			"uri":"./store-shutter-animation-nonbaked2.bin"
+			"uri":".assets/models/store-shutter-animation-nonbaked2.bin"
 		}
 	]
 };
