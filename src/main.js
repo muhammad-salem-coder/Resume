@@ -94,8 +94,6 @@ composer.addPass(outputPass)
 var formControls = new TransformControls(camera, render.domElement);
 scene.add(formControls);
 
-const gui = new GUI;
-
 const light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 0.1 );
 scene.add( light );
 
@@ -344,7 +342,7 @@ let emit_scrolls = [3, 5, 0, 10, 9, 15, 16, 17]
 let tex_path = [];
 // loading containers and scrolls
 for (let i=0; i <= 16; i++){
-    if (emit_scrolls.includes(i)){
+    if (!emit_scrolls.includes(i)){
         tex_path.push(`scroll_tex${i}`)
     }
 }
