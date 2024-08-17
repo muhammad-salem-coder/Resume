@@ -612,14 +612,14 @@ function check_collision() {
                 if (toggleButton.classList.contains('enter')){
                     look_at_object(shop_models[i][0].position, 7);
             
-                    if (!blinkInterval) {
-                        blinkShutters(shop_models[i]);
-                    }
-                    if (shop_models[i][4].time === 0.75){
-                        shop_models[i][7][0].visible = false;
-                        shop_models[i][7][1].visible = false;
-                        shop_models[i][7][2].visible = false;
-                    }
+                    // if (!blinkInterval) {
+                    //     blinkShutters(shop_models[i]);
+                    // }
+                    // if (shop_models[i][4].time === 0.75){
+                    //     shop_models[i][7][0].visible = false;
+                    //     shop_models[i][7][1].visible = false;
+                    //     shop_models[i][7][2].visible = false;
+                    // }
                     collisionDetected = true;
                     selected_store = shop_models[i];
                 }
@@ -636,11 +636,11 @@ function check_collision() {
         toggleButton.classList.remove('enter');
         toggleButton.classList.add('none');
         reset_camera();
-        shop_models.forEach(i => {
-            i[7][0].visible = true;
-            i[7][1].visible = true;
-            i[7][2].visible = true;
-        });
+        // shop_models.forEach(i => {
+        //     i[7][0].visible = true;
+        //     i[7][1].visible = true;
+        //     i[7][2].visible = true;
+        // });
 
         if (blinkInterval) {
             clearInterval(blinkInterval);
@@ -706,19 +706,19 @@ function blinkShutters(shop_model) {
     let blinkCount = Math.floor(totalBlinkTime / (blinkDuration * 2));
     let blinkedTimes = 0;
 
-    blinkInterval = setInterval(() => {
-        if (blinkedTimes < blinkCount) {
-            shop_model[7][0].visible = !shop_model[7][0].visible;
-            shop_model[7][1].visible = !shop_model[7][1].visible;
-            shop_model[7][2].visible = !shop_model[7][2].visible;
-            blinkedTimes++;
-        } else {
-            clearInterval(blinkInterval);
-            shop_model[7][0].visible = true;
-            shop_model[7][1].visible = true;
-            shop_model[7][2].visible = true;
-        }
-    }, blinkDuration);
+    // blinkInterval = setInterval(() => {
+    //     if (blinkedTimes < blinkCount) {
+    //         shop_model[7][0].visible = !shop_model[7][0].visible;
+    //         shop_model[7][1].visible = !shop_model[7][1].visible;
+    //         shop_model[7][2].visible = !shop_model[7][2].visible;
+    //         blinkedTimes++;
+    //     } else {
+    //         clearInterval(blinkInterval);
+    //         shop_model[7][0].visible = true;
+    //         shop_model[7][1].visible = true;
+    //         shop_model[7][2].visible = true;
+    //     }
+    // }, blinkDuration);
 }
 window.addEventListener('mousemove', (e) => {
     const mouse = new THREE.Vector2();
