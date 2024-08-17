@@ -208,7 +208,7 @@ export function load_model_animation(path, setpath, scene, color, pos, scale, ca
 }
 
 export function load_model_animation_base(path, setpath, scene, color, pos, scale, callback) {
-    const loader = new GLTFLoader(loaderManager.setpath(setpath));
+    const loader = new GLTFLoader(loaderManager).setpath(setpath);
 
     loader.parse(JSON.stringify(path), '', function (gltf) {
         const model = gltf.scene;
