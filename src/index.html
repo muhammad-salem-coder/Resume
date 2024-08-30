@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Threejs resume</title>
+		<script type="text/css" rel="stylesheet"  src="main.css"></script>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		<style>
+			body { margin: 0; }
+		</style>
+
+		<script type="importmap">
+			{
+			"imports": {
+				"three": "https://cdn.jsdelivr.net/npm/three@<version>/build/three.module.js",
+				"three/addons/": "https://cdn.jsdelivr.net/npm/three@<version>/examples/jsm/"
+			}
+			}
+		</script>
+
+
+	</head>
+	<body>
+		<!-- <nav>
+			<a>3d View</a>
+			<a>Doc View</a>
+		</nav> -->
+		<!-- <div class="loading-screen">
+			<label for="progress-bar">Loading</label>
+			<progress id="progress-bar" value="0" max="100"></progress>
+		</div> -->
+		<ul class="notifications"></ul>
+
+		<div class="contorls-sec">
+			<div class="instr">Hold</div>
+			<div id="spacebar">Spacebar</div>
+			<div class="instr">To Move</div>
+		</div>
+		<div id="enter-btn">
+			<div class="glass-btn" id="enter-shop">Enter</div>
+		</div>
+		<div class="container">
+			<div class="pre-loader">
+				<div class="loader"></div>
+				<div class="loader-bg"></div>
+			</div>
+			<div class="loader-content">
+				<div class="count"><p style="font-family: 'Poppins';">0</p></div>
+				<div class="copy">
+					<p class="ml16">Loading</p>
+				</div>
+			</div>
+			<div class="loader-2"></div>
+		</div>
+		
+        <canvas class="webgl"></canvas>
+		<script src="main.js"></script>
+		<script src="./toast.js"></script>
+	</body>
+</html>
+
+
