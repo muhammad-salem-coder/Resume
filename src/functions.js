@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import * as CANNON from 'cannon-es';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 import gsap from 'gsap/gsap-core.js';
 import { CSSPlugin } from 'gsap/CSSPlugin'; // Import CSSPlugin
 import anime from 'animejs/lib/anime.es.js';
@@ -8,7 +9,6 @@ import anime from 'animejs/lib/anime.es.js';
 gsap.registerPlugin(CSSPlugin); // Register the CSSPlugin
 
 const loaderManager = new THREE.LoadingManager();
-
 
 const load_screen = document.querySelector('.loading-screen')
 let counterElement = document.querySelector('.count p');
@@ -95,8 +95,15 @@ gsap.to('.loader', {
 
 // _____________________________________________________________________________ //
 
+const gltfLoader = new GLTFLoader(loaderManager);
+const dloader = new DRACOLoader();
+dloader.setDecoderPath( '/examples/jsm/libs/draco/' );
+// dloader.preload();
+dloader.setDecoderConfig({ type: 'js' })
+gltfLoader.setDRACOLoader(dloader);
+
 export function load_model(path, setpath, scene, color, pos, scale, callback) {
-    const loader = new GLTFLoader(loaderManager).setPath(setpath);
+    const loader = gltfLoader.setPath(setpath);
 
     loader.load(path, function (gltf) {
         const model = gltf.scene;
@@ -113,7 +120,7 @@ export function load_model(path, setpath, scene, color, pos, scale, callback) {
 
 export function load_model_new(path, setpath, scene, color, pos, scale, callback) {
     return new  Promise ((resolve, reject) => {
-        const loader = new GLTFLoader(loaderManager).setPath(setpath);
+        const loader = gltfLoader.setPath(setpath);
 
         loader.load(path, function (gltf) {
             const model = gltf.scene;
@@ -131,6 +138,7 @@ export function load_model_new(path, setpath, scene, color, pos, scale, callback
 
 export function load_glass_model(path, scene, color, pos, scale, callback) {
     const loader = new GLTFLoader(loaderManager);
+    
     loader.load(path, function (gltf) {
         const model = gltf.scene;
         let containerMesh = model.getObjectByName('Circle');
@@ -160,8 +168,7 @@ export function load_glass_model(path, scene, color, pos, scale, callback) {
 }
 
 export function load_model_noadd(path, scene, color, pos, scale, callback) {
-    const loader = new GLTFLoader(loaderManager);
-    loader.load(path, function (gltf) {
+    gltfLoader.load(path, function (gltf) {
         const model = gltf.scene;
         model.traverse((child) => {
             if (child.isMesh) {
@@ -180,7 +187,7 @@ export function load_model_noadd(path, scene, color, pos, scale, callback) {
 }
 
 export function load_model_animation(path, setpath, scene, color, pos, scale, callback) {
-    const loader = new GLTFLoader(loaderManager).setPath(setpath);
+    const loader = gltfLoader.setPath(setpath);
 
     loader.load(path, function (gltf) {
         const model = gltf.scene;
@@ -208,8 +215,9 @@ export function load_model_animation(path, setpath, scene, color, pos, scale, ca
 }
 
 
+
 export function load_model_animation_base(path, setpath, scene, color, pos, scale, callback) {
-    const loader = new GLTFLoader(loaderManager).setPath(setpath);
+    const loader = gltfLoader.setPath(setpath);
 
     loader.load(path, function (gltf) {
         const model = gltf.scene;
