@@ -97,9 +97,9 @@ gsap.to('.loader', {
 
 const gltfLoader = new GLTFLoader(loaderManager);
 const dloader = new DRACOLoader();
-dloader.setDecoderPath( '/examples/jsm/libs/draco/' );
+dloader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.7/');
 // dloader.preload();
-dloader.setDecoderConfig({ type: 'js' })
+dloader.setDecoderConfig({ type: 'js' });
 gltfLoader.setDRACOLoader(dloader);
 
 export function load_model(path, setpath, scene, color, pos, scale, callback) {
