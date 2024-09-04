@@ -68,8 +68,7 @@ outlinePass.visibleEdgeColor.set('#ffffff'); // color of visible edges
 outlinePass.hiddenEdgeColor.set('#190a05');  // color of hidden edges
 
 const outputPass = new OutputPass();
-composer.addPass(outputPass)
-
+composer.addPass(outputPass);
 // const bloomPass = new UnrealBloomPass(
 //     new THREE.Vector2(window.innerWidth, innerHeight),
 //     0.6,
@@ -175,7 +174,8 @@ toggleButton.addEventListener('click', () => {
 const control_sec = document.querySelector('.contorls-sec');
 
 // _________________________loading models________________________ //
-
+let engine_force = 800, max_steer = 0.3;
+let brake_force = 8; // Define a high brake force
 functions.load_model('Cars.glb', './assets/models/', scene, 0xfff0ff, {x:0.5, y:0.5, z:0.5}, {x:1, y:1, z:1}, function(loadModel){
     car_model = loadModel;
     // getting size
@@ -237,9 +237,6 @@ functions.load_model('Cars.glb', './assets/models/', scene, 0xfff0ff, {x:0.5, y:
         vehicle.setBrake(0, 2);
         vehicle.setBrake(0, 3);
     
-        let engine_force = 800, max_steer = 0.3;
-        let brake_force = 8; // Define a high brake force
-    
         switch(event.keyCode) {
             case 32: // forward
                 control_sec.classList.add('hide');
@@ -281,11 +278,34 @@ functions.load_model('Cars.glb', './assets/models/', scene, 0xfff0ff, {x:0.5, y:
             //   break;
         }
     }
+
+    function handleMouseTouch(event) {
+        const isMouseDown = event.type === 'mousedown' || event.type === 'touchstart';
+        const isMouseUp = event.type === 'mouseup' || event.type === 'touchend';
+        
+        if (isMouseDown) {
+            vehicle.applyEngineForce(-engine_force, 2);
+            vehicle.applyEngineForce(-engine_force, 3);
+            vehicle.setBrake(0, 2);
+            vehicle.setBrake(0, 3);
+        } else if (isMouseUp) {
+            vehicle.applyEngineForce(0, 2);
+            vehicle.applyEngineForce(0, 3);
+            vehicle.setBrake(brake_force, 2); // Apply brake force to the rear wheels
+            vehicle.setBrake(brake_force, 3); // Apply brake force to the rear wheels
+        }
+    }
     
-    if (!toggleButton.classList.contains('exit')) {
+    if (toggleButton.classList.contains('none')) {
         window.addEventListener('keydown', car_controls);
         window.addEventListener('keyup', car_controls);
+
+        window.addEventListener('mousedown', handleMouseTouch);
+        window.addEventListener('mouseup', handleMouseTouch);
+        window.addEventListener('touchstart', handleMouseTouch);
+        window.addEventListener('touchend', handleMouseTouch);
     }
+    
 })
 
 // loading wheels
@@ -461,11 +481,6 @@ for (let i=0; i < barrel_count; i++){
 
     barrels.push([barrel_model, barrel_pos[i]]);
 
-    // const folder = gui.addFolder(`Barrel ${i + 1}`);
-    // folder.add(barrel_model.position, 'x', -50, 50).onChange(value => updateBarrelPosition(i, 'x', value));
-    // folder.add(barrel_model.position, 'y', -10, 10).onChange(value => updateBarrelPosition(i, 'y', value));
-    // folder.add(barrel_model.position, 'z', -50, 50).onChange(value => updateBarrelPosition(i, 'z', value));
-    // folder.open();
 });
 }
 
@@ -624,9 +639,9 @@ function check_collision() {
                     selected_store = shop_models[i];
                 }
                 break;  
+            }
         }
     }
-}
 
     if (!in_area){
         toggleButton.classList.add('disappear');
@@ -825,7 +840,12 @@ let wheel_visual;
 let loaded_scrolls = false;
 
 function animate(){
-
+    if (vehicle){
+        if (!toggleButton.classList.contains('none')){
+            vehicle.setBrake(100, 2);
+            vehicle.setBrake(100, 3);
+        }
+    }
     if (!loaded_scrolls && (scrolls.length == 24)){
         for (let scroll_count=0; scroll_count <= scrolls.length; scroll_count++){
             if (texs[`scroll_tex${scroll_count}`] !== undefined){
@@ -1011,11 +1031,8 @@ function animate(){
     // ______________________________________________________________ //
     check_collision();
 
-    
-    // render.render(scene, camera);
-
-    requestAnimationFrame(animate);
     composer.render()
+    requestAnimationFrame(animate);
 }
 animate();
 formControls.detach();

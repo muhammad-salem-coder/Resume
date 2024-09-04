@@ -214,8 +214,6 @@ export function load_model_animation(path, setpath, scene, color, pos, scale, ca
     });
 }
 
-
-
 export function load_model_animation_base(path, setpath, scene, color, pos, scale, callback) {
     const loader = gltfLoader.setPath(setpath);
 
@@ -406,7 +404,7 @@ const BLADE_HEIGHT = 0.4;
 const BLADE_HEIGHT_VARIATION = 0.6;
 const PATH_WIDTH = 5;
 
-export function generateField (grassMaterial, scene) {
+export function generateField(grassMaterial, scene) {
     const positions = [];
     const uvs = [];
     const indices = [];
