@@ -5,7 +5,6 @@ import gsap from 'gsap/gsap-core.js';
 import { RGBELoader, RenderPass, EffectComposer, OutputPass } from 'three/examples/jsm/Addons.js';
 import { OutlinePass } from 'three/examples/jsm/postprocessing/OutlinePass.js';
 import { TransformControls } from "three/examples/jsm/controls/TransformControls.js";
-import { GUI } from 'lil-gui';
 import * as functions from './functions';
 import './main.css';
 
@@ -162,12 +161,12 @@ toggleButton.addEventListener('click', () => {
     if (toggleButton.classList.contains('none')) {
         toggleButton.classList.remove('none');
         toggleButton.classList.add('enter');
-        toggleButton.textContent = 'Click To Exit';
+        toggleButton.textContent = 'Exit';
     }
      else if (toggleButton.classList.contains('enter')) {
         toggleButton.classList.remove('enter');
         toggleButton.classList.add('exit');
-        toggleButton.textContent = 'Click To Enter';
+        toggleButton.textContent = 'Enter';
     }
 });
 
