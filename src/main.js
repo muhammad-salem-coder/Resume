@@ -162,12 +162,12 @@ toggleButton.addEventListener('click', () => {
     if (toggleButton.classList.contains('none')) {
         toggleButton.classList.remove('none');
         toggleButton.classList.add('enter');
-        toggleButton.textContent = 'Exit';
+        toggleButton.textContent = 'Click To Exit';
     }
      else if (toggleButton.classList.contains('enter')) {
         toggleButton.classList.remove('enter');
         toggleButton.classList.add('exit');
-        toggleButton.textContent = 'Enter';
+        toggleButton.textContent = 'Click To Enter';
     }
 });
 

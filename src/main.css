@@ -195,7 +195,7 @@ label {
     font-size: 130%;
     color: aliceblue;
 }
-
+/* 
 .instr-2{
   transform: translateY(50px);
   position: absolute;
@@ -203,7 +203,7 @@ label {
   font-weight: 600;
   font-size: 130%;
   color: aliceblue;
-}
+} */
 
 @keyframes spacebar-anim {
     0%, 100% {
