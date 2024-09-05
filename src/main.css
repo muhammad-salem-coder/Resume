@@ -149,6 +149,7 @@ label {
     width: 100%;
     bottom: 30%;
     justify-content: center;
+    align-items: center;
 }
 
 .contorls-sec{
@@ -193,6 +194,15 @@ label {
     font-weight: 600;
     font-size: 130%;
     color: aliceblue;
+}
+
+.instr-2{
+  transform: translateY(50px);
+  position: absolute;
+  font-family: 'Poppins';
+  font-weight: 600;
+  font-size: 130%;
+  color: aliceblue;
 }
 
 @keyframes spacebar-anim {
