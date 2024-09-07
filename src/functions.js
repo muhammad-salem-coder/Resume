@@ -223,7 +223,8 @@ export function load_model_animation_base(path, setpath, scene, color, pos, scal
         model.rotation.z += Math.PI / 2; 
         model.scale.set(scale.x, scale.y, scale.z);
         model.position.set(pos.x, pos.y, pos.z);
-        scene.add(model);
+
+        scene.add(model)
 
         let mixer = new THREE.AnimationMixer(model);
         const clips = gltf.animations;

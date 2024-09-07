@@ -161,12 +161,12 @@ toggleButton.addEventListener('click', () => {
     if (toggleButton.classList.contains('none')) {
         toggleButton.classList.remove('none');
         toggleButton.classList.add('enter');
-        toggleButton.textContent = 'Exit';
+        toggleButton.textContent = 'Click To Exit';
     }
      else if (toggleButton.classList.contains('enter')) {
         toggleButton.classList.remove('enter');
         toggleButton.classList.add('exit');
-        toggleButton.textContent = 'Enter';
+        toggleButton.textContent = 'Click To Enter';
     }
 });
 
@@ -332,12 +332,12 @@ for (let i = 0; i < 4; i++) {
     let shopmodel;
     let store_action;
     let store_mixer;
-    functions.load_model_animation_base(`shop${i+1}.glb`, './assets/models/', scene, 0xfff0ff, {x:(0.5*i)+(10*i), y:0.5, z:0.5}, {x:2, y:2, z:2}, function(loadModel){
+    functions.load_model_animation_base(`shop${i+1}_opt.glb`, './assets/models/', scene, 0xfff0ff, {x:(0.5*i)+(10*i), y:0.5, z:0.5}, {x:2, y:2, z:2}, function(loadModel){
         let { model: load_shop_model, mixer: loadedMixer, action: load_action } = loadModel;
         shopmodel = load_shop_model;
         store_mixer = loadedMixer;
         store_action = load_action;
-        store_action.play();     
+        store_action.play();
         
         let baord_light1 = shopmodel.getObjectByName('Icosphere_hide');
         let baord_light2 = shopmodel.getObjectByName('Icosphere001_hide');
@@ -829,8 +829,6 @@ document.addEventListener('click', (e) => {
             scrolls[containers.indexOf(selectedContainer)][1].paused = true;
         }
     }
-    
-
 });
 
 // _______________________________________________________________ //
@@ -842,7 +840,7 @@ function animate(){
     if (vehicle){
         if (!toggleButton.classList.contains('none')){
             vehicle.setBrake(100, 2);
-            vehicle.setBrake(100, 3);
+            vehicle.setBrake(100, 3); 
         }
     }
     if (!loaded_scrolls && (scrolls.length == 24)){
